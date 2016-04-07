@@ -1,0 +1,552 @@
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+.margin-left-5 {
+    padding-left: 5px;
+}
+
+.margin-left-25 {
+    padding-left: 25px;
+}
+
+.margin-bottom-10 {
+    padding-bottom: 10px;
+}
+
+.width-100 {
+    width: 100%;
+}
+
+body {
+    padding: 0;
+    font-family: FontAwesome, Roboto, Arial, Sans-Serif;
+    text-decoration: none;
+}
+
+.map {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #222222;
+}
+
+.menu {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.logo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.branding-images {
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.menu-dialog-title {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-bottom: 1px solid #DEDEDE;
+    font-size: 16px;
+    color: #DEDEDE;
+}
+
+.menu-dialog-body {
+    color: #DEDEDE;
+    padding: 20px;
+    width: 100%;
+    overflow-y: scroll;
+    max-height: 600px;
+}
+
+.menu-dialog-lulc-input {
+    height: 24px;
+    background-color: rgba(255, 255, 255, 0);
+    color: #DEDEDE;
+    border-top-right-radius: 4px !important;
+    border-bottom-right-radius: 4px !important;
+    border-color: #DEDEDE;
+}
+
+.menu-dialog-lulc-input:focus {
+    border-color: #FFFFFF;
+}
+
+.menu-dialog-lulc-input-list {
+    height: 24px;
+    background-color: rgba(255, 255, 255, 0);
+    color: #DEDEDE;
+    border-top-right-radius: 4px !important;
+    border-bottom-right-radius: 4px !important;
+    border-color: #373737;
+}
+
+.menu-dialog-lulc-input-list:focus {
+    border-color: #FFFFFF;
+}
+
+.menu-dialog-lulc-error-label {
+    font-weight: bold;
+    color: red;
+}
+
+.menu-dialog-lulc-btn {
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    outline: none;
+    text-transform: uppercase;
+    /*font-size: 12px;*/
+    font-weight: bold;
+    color: #DEDEDE;
+    padding: 2px;
+    vertical-align: middle;
+    margin-left: 10px;
+    font-size: 16px;
+}
+
+.menu-dialog-lulc-btn:hover, .menu-dialog-lulc-btn:focus {
+    color: #ffffff;
+    text-decoration: inherit;
+}
+.confirmation-dialog-ok-btn {
+    background-color: rgba(255, 255, 255, 0);
+    text-transform: uppercase;
+    /*font-size: 12px;*/
+    letter-spacing: 2px;
+    font-weight: bold;
+    color: #DEDEDE;
+    border: 1px solid #DEDEDE;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.confirmation-dialog-ok-btn:focus {
+    outline: 0 !important;
+}
+
+
+.menu-dialog-lulc-btn-run {
+    background-color: rgba(255, 255, 255, 0);
+    text-transform: uppercase;
+    /*font-size: 12px;*/
+    letter-spacing: 2px;
+    font-weight: bold;
+    color: #DEDEDE;
+    border: 1px solid #DEDEDE;
+    float: right;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.menu-dialog-lulc-btn-run:focus {
+    outline: 0 !important;
+}
+
+.menu-dialog-lulc-validation-lbl {
+}
+
+.menu-dialog-tile-selection {
+    color: #DEDEDE;
+    padding: 10px;
+    font: Roboto, Arial, Sans-Serif;
+}
+
+.menu-lulc-confimation-dialog {
+    color: #DEDEDE;
+    padding: 10px;
+    font: Roboto, Arial, Sans-Serif;
+}
+
+.general-confimation-dialog {
+    color: #DEDEDE;
+    padding: 10px;
+    font: Roboto, Arial, Sans-Serif;
+}
+
+.ngdialog.ngdialog-theme-default.menu-dialog-tile-selection-light {
+    padding-top: 50px;
+}
+
+.ngdialog.ngdialog-theme-default.menu-dialog-tile-selection-light .ngdialog-content {
+    background-color: rgba(0, 0, 0, 0.3);
+    width: 550px;
+}
+
+.ngdialog.ngdialog-theme-default.menu-dialog-help .ngdialog-content {
+    width: 1365px;
+}
+
+.ngdialog.ngdialog-theme-default.menu-lulc-confimation-dialog .ngdialog-content {
+    width: 725px;
+}
+
+.ngdialog.ngdialog-theme-default.general-confimation-dialog .ngdialog-content {
+    width: 400px;
+    height: 140px;
+}
+
+.ngdialog.ngdialog-theme-default .ngdialog-content {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.ngdialog.ngdialog-theme-default .ngdialog-close:before {
+    color: #DEDEDE;
+}
+
+.legend {
+    position: absolute;
+    color: #DEDEDE;
+    top: 100px;
+    right: 20px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding: 10px;
+    transition: background-color 1s;
+}
+
+.legend:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.layers {
+    position: absolute;
+    color: #DEDEDE;
+    top: 100px;
+    left: 20px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding: 10px;
+    transition: background-color 1s;
+}
+
+.layers:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.layers-title {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-bottom: 1px solid #DEDEDE;
+    margin-bottom: 5px;
+    width: 100%;
+    display: inline;
+}
+
+.layers-item-details {
+    font-size: 12px;
+    padding-left: 18px;
+    color: #777;
+    width: 100%;
+}
+
+.legend-title {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-bottom: 1px solid #DEDEDE;
+    margin-bottom: 5px;
+    width: 100%;
+    display: inline;
+}
+
+.layer-collapse-button.collapsed:before {
+    content: '\f0fe';
+    font-size: 12px;
+    padding-right: 5px;
+    font-family: FontAwesome;
+}
+
+.layer-collapse-button:before {
+    content: '\f146';
+    font-size: 12px;
+    padding-right: 5px;
+    font-family: FontAwesome;
+}
+
+.layers-body {
+    margin-top: 15px;
+    padding-left: 20px;
+    padding-right: 10px;
+    overflow-y: scroll;
+    max-height: 700px;
+    width: 500px;
+}
+
+.legend-body {
+    margin-top: 15px;
+    padding-left: 20px;
+    padding-right: 10px;
+    overflow-y: scroll;
+    max-height: 700px;
+    width: 280px;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    background: #DEDEDE;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+.layer-item {
+    display: block;
+    margin-bottom: 2px;
+}
+
+.layer-item:hover {
+    display: block;
+    color: #FFFFFF;
+}
+
+.layer-item-label {
+    font-weight: bold;
+    font-size: 12px;
+    letter-spacing: 2px;
+    float: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 350px;
+    white-space: nowrap;
+}
+
+.layer-item-menu {
+    float: right;
+    margin-left: 20px;
+}
+
+.layer-button {
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    outline: none;
+    text-transform: uppercase;
+    /*font-size: 12px;*/
+    font-weight: bold;
+    font-size: 11px;
+    color: #DEDEDE;
+    padding: 2px;
+}
+
+.layer-button:hover, .layer-button:focus {
+    color: #ffffff;
+    text-decoration: inherit;
+}
+
+.layer-button:disabled {
+    color: #777;
+    text-decoration: inherit;
+}
+
+.menu-button {
+    background-color: rgba(255, 255, 255, 0);
+    text-transform: uppercase;
+    /*font-size: 12px;*/
+    letter-spacing: 2px;
+    font-weight: bold;
+    color: #DEDEDE;
+    border: 1px solid #DEDEDE;
+}
+
+.menu-button:focus {
+    outline: 0 !important;
+}
+
+.menu-button-help {
+    background-color: rgba(255, 255, 255, 0);
+    text-transform: uppercase;
+    /*font-size: 12px;*/
+    letter-spacing: 2px;
+    font-weight: bold;
+    color: #DEDEDE;
+    border: none;
+}
+
+.menu-button-help:focus {
+    outline: 0 !important;
+}
+
+.help-menu-label {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-bottom: 1px solid #DEDEDE;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.help-sub-menu {
+    padding-left: 50px;
+}
+
+.help-tabs li a {
+    background-color: rgba(255, 255, 255, 0);
+    text-transform: uppercase;
+    /* font-size: 12px; */
+    letter-spacing: 2px;
+    font-weight: bold;
+    color: #DEDEDE;
+    border: 1px solid #DEDEDE;
+    padding: 7px 15px;
+    font-size: 14px;
+}
+
+.help-tabs li a:hover {
+    color: #333;
+    background-color: #e6e6e6;
+    border-color: #adadad;
+}
+
+.help-tabs li a:focus {
+    color: #333;
+    background-color: #e6e6e6;
+    border-color: #adadad;
+    outline: 0;
+}
+
+.help-section {
+    padding: 50px 100px;
+}
+
+.maritime-ol-zoom {
+    right: 10px;
+    bottom: 55px;
+    position: absolute;
+    padding: 0;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.maritime-ol-zoom:hover {
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.maritime-ol-zoom-in, .maritime-ol-zoom-out {
+    background-color: rgba(255, 255, 255, 0) !important;
+    font-family: FontAwesome, Sans-Serif !important;
+    color: #DEDEDE !important;
+    width: 25px !important;
+    height: 25px !important;
+    border: 1px solid #DEDEDE;
+}
+
+.maritime-ol-zoom-in, .maritime-ol-zoom-out {
+    background-color: rgba(255, 255, 255, 0) !important;
+    font-family: FontAwesome, Sans-Serif !important;
+    color: #DEDEDE !important;
+    width: 25px !important;
+    height: 25px !important;
+    border: 1px solid #DEDEDE !important;
+}
+
+.maritime-ol-zoom-in:focus, .maritime-ol-zoom-out:focus {
+    outline: 0 !important;
+
+}
+
+.maritime-ol-zoom-in:hover, .maritime-ol-zoom-out:hover {
+    background-color: #DEDEDE !important;
+    color: #333 !important;
+}
+
+.maritime-ol-scale-line {
+    right: 10px;
+    bottom: 25px;
+    position: absolute;
+    text-transform: uppercase;
+
+}
+
+.maritime-ol-mouse-position {
+    letter-spacing: 2px;
+    font-weight: bold;
+    color: #DEDEDE;
+    margin-left: 10px;
+    right: 10px;
+    bottom: 5px;
+    position: absolute;
+}
+
+.maritime-ol-attribution {
+    background-color: rgba(0, 0, 0, 0);
+    position: inherit ! important;
+    overflow: hidden;
+}
+
+.maritime-ol-attribution:hover {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.maritime-ol-attribution span {
+    font-family: 'Roboto', "Arial", Sans-Serif !important;
+    font-size: 11px;
+    color: #FFFFFF !important;
+    position: absolute;
+    top: 6px;
+    left: 0;
+    text-align: center;
+    width: 100%;
+}
+
+.maritime-ol-attribution ul {
+    list-style-type: none;
+    margin-bottom: 0;
+    padding: 0;
+    width: 150px;
+}
+
+.maritime-ol-attribution li {
+    position: relative;
+    font-size: 9px;
+    font-family: Roboto;
+    margin-bottom: 10px;
+}
+
+.maritime-ol-attribution button {
+    display: none;
+}
+
+.maritime-ol-scale-line-inner {
+    border: 1px solid #000;
+    border-top: none;
+    color: #DEDEDE;
+    font-family: "Roboto", Sans-Serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 10px;
+    text-align: right;
+    margin: 1px;
+    padding-right: 2px;
+    padding-bottom: 1px;
+    border-color: #DEDEDE;
+}
+
+.ol-dragbox {
+    background-color: rgba(255, 255, 255, 0.4);
+    border-color: rgba(0, 0, 0, 1);
+}
+
+.default-tile-selection-cursor {
+    cursor: url("/images/tile-selection.cur"), auto;
+}

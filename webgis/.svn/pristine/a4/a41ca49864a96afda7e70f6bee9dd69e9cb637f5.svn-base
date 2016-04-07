@@ -1,0 +1,719 @@
+<h1>{{ 'dialog.help.theLulcSubServiceTitle' | translate }}</h1>
+<br>
+
+<p align="justify">The LULC subservice generates LULC maps for the user defined dates and areas. If
+    more than on date is set, the subservice will also generate a LULC changes map.</p>
+
+<p align="justify">To generate the LULC maps starts with automatic fetching of the images and
+    <u>pre-processing</u>
+    them to prepare for classification. The pre-processing applies six different algorithms,
+    consisting in coordinate system transformation, radiometric correction, conversion to at-Sensor
+    Brightness Temperature, cloud cover detection and removal, values normalization and Image
+    registration / geometric correction.</p>
+
+<p align="justify">The production of the LULC consists on a supervised per-pixel
+    <u>classification</u> of the EO data supported by training data provided by the users. Before
+    proceeding to the classification process the system will identify and remove the outliers from
+    the training areas so as to improve the classification process. The classification algorithm
+    (Linear Discriminant Classifier) is then applied to the spectral bands (except band 6) of 2
+    Landsat images (these images shall be acquired during the dry and wet seasons, allowing
+    acquiring information of the different phenological phases) and to the NDVI of these images.</p>
+
+<p align="justify">The nomenclature used for the Land Cover products contains eleven classes. It was
+    based on the nomenclature derived by LADA and proposed by UNCCD to assess ecosystems and
+    populations affected by land degradation at local, national and regional scales [11]. The
+    nomenclature also was defined taking into consideration the feedback provided by the users in
+    DesertWatch Extension project [7]. All classes and descriptions are compiled in Table X.</p>
+<table class="table table-condensed"
+       style="font-size: 12px; width: 500px;display: block;margin: 10px auto;">
+    <caption>Table X: LULC nomenclature</caption>
+    <thead>
+        <tr>
+            <th>Class</th>
+            <th>Acronym</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td align="center">Artificial areas</td>
+            <td align="center">1</td>
+            <td align="justify">Primarily non-vegetated areas containing less than four percent
+                vegetation during at
+                least 10 months a year. The environment is influenced by the edaphic substratum. The
+                cover is artificial and a result of human activities.
+            </td>
+        </tr>
+        <tr>
+            <td align="center">Rainfed Agriculture</td>
+            <td align="center">2</td>
+            <td align="justify">Cereals, legumes, fodder crops, root crops and fallow land. Includes
+                flowers and
+                fruit trees (nurseries cultivation) and vegetables, whether open field, under
+                plastic or glass (includes market gardening). Includes aromatic, medicinal and
+                culinary plants. Does not include permanent pastures.
+            </td>
+        </tr>
+        <tr>
+            <td align="center">Irrigated agriculture</td>
+            <td align="center">3</td>
+            <td align="justify">Crops irrigated permanently or periodically, using a permanent
+                infrastructure
+                (irrigation channels, drainage network). Most of these crops cannot be cultivated
+                without an artificial water supply. Does not include sporadically irrigated land.
+            </td>
+        </tr>
+        <tr>
+            <td align="center">Forests</td>
+            <td align="center">4</td>
+            <td align="justify">The main layer consists of closed to open trees. The crown cover is
+                between 100 and
+                15% (a further sub range can be defined – Closed to Open 100–40%).
+            </td>
+        </tr>
+        <tr>
+            <td align="center">Shrubland</td>
+            <td align="center">5</td>
+            <td align="justify">The main layer consists of closed to open shrubland. The crown cover
+                is between 100
+                and 15% (a further sub range can be defined – Closed to Open 100–40%).
+            </td>
+        </tr>
+        <tr>
+            <td align="center">Natural grassland</td>
+            <td align="center">6</td>
+            <td align="justify">The main layer consists of closed to open herbaceous vegetation. The
+                crown cover is
+                between 100 and 15% (a further sub range can be defined – Closed to Open 100–40%).
+            </td>
+        </tr>
+        <tr>
+            <td align="center">Sparsely vegetated areas</td>
+            <td align="center">7</td>
+            <td align="justify">20049 - The main layer consists of sparse woody vegetation. The
+                crown cover is
+                between (20-10) and 1%. The sparseness of the vegetation may be further specified.
+                20058 - The main layer consists of sparse herbaceous vegetation. The crown cover is
+                between (20-10) and 1%. The sparseness of the vegetation may be further specified.
+            </td>
+        </tr>
+        <tr>
+            <td align="center">Burnt areas</td>
+            <td align="center">8</td>
+            <td align="justify">Forested, natural or semi-natural areas affected by recent fires.
+                The image colour
+                of these surfaces must still be black. It excludes the areas that already present
+                forest regeneration
+            </td>
+        </tr>
+        <tr>
+            <td align="center">Beaches, dunes, sand plains and rocks</td>
+            <td align="center">9</td>
+            <td align="justify">Primarily non-vegetated areas containing less than four percent
+                vegetation during at
+                least 10 months a year. The environment is influenced by the edaphic substratum. The
+                cover is natural. Included are areas like bare rock and sands.
+            </td>
+        </tr>
+        <tr>
+            <td align="center">Wetlands</td>
+            <td align="center">10</td>
+            <td align="justify">Primarily vegetated areas containing more than four percent
+                vegetation during at
+                least two months a year. The environment is significantly influenced by the presence
+                of water over extensive periods of time, i.e. water is present for more than three
+                months a year and when water is present less than three months a year, it is present
+                75 percent of the flooding time. This class includes floating vegetation.
+            </td>
+        </tr>
+        <tr>
+            <td align="center">Water bodies</td>
+            <td align="center">11</td>
+            <td align="justify">The land cover consists of perennial natural water bodies. A further
+                specification
+                can be made in flowing or standing water.
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p align="justify">The next stage of the LULC production block consists on post processing the
+    classification result with segmentation/vectorization and generalization algorithms to produce a
+    vector version of the maps and guarantee the Minimum Mapping Unit requirement, respectively.
+    Also following this an assessment of the thematic accuracy of the maps will be performed. The
+    latter is based on a random sample of cases (e.g. pixels) - the testing set – which are compared
+    with the map. The testing set will be a set of samples separated from the user selected samples
+    used for classification.</p>
+
+<p align="justify"><u>Change Detection</u> – The detection of land cover changes is performed through a
+    comparative analysis of the independently produced classifications from the time-series. This
+    comparison will be performed at the pixel level and will result in the pixel containing the land
+    cover information for the start and end points of the time series. E.g. class 3 -> class 7, as in T0
+    -> T0+n.</p>
+
+<p align="justify">At this stage of the process, the LULC changes map can skip to post-processing which
+    will then generate two of the three service outputs: The LULC changes map and the Change/No Change
+    mask.</p>
+
+<p align="justify"><u>Analysis</u> – The analysis process consists on understanding the land cover changes over
+    the time-series. In practice this means that for each combination of land cover changes a class representing
+    the associated trend will be assigned. For example, in the time-series (T0, T0+1) there is a land cover
+    change from Forest to herbaceous vegetation, the trend class for this situation could be
+    “Deforestation”. This <i>rationale</i> is established in a matrix with every possible combination of land
+    cover
+    changes - Table 5 and Figure 4 exemplify the approach - and a new map is generated with the trend
+    classes properly attributed to each pixel. The matrix should be reviewed and configured by the
+    users.</p>
+<table class="table table-condensed"
+       style="font-size: 12px;display: block">
+<caption>Table X: Possible reclassification matrix for combinations of LULC changes</caption>
+<tbody>
+<tr>
+    <td></td>
+    <td align="center" colspan="12">LULC class at T1</td>
+</tr>
+<tr>
+    <td rowspan="12">LULC class at T0</td>
+    <td>
+        <p><strong></strong></p>
+    </td>
+    <td>
+        <p><strong>1</strong></p>
+    </td>
+    <td>
+        <p><strong>2</strong></p>
+    </td>
+    <td>
+        <p><strong>3</strong></p>
+    </td>
+    <td>
+        <p><strong>4</strong></p>
+    </td>
+    <td>
+        <p><strong>5</strong></p>
+    </td>
+    <td>
+        <p><strong>6</strong></p>
+    </td>
+    <td>
+        <p><strong>7</strong></p>
+    </td>
+    <td>
+        <p><strong>8</strong></p>
+    </td>
+    <td>
+        <p><strong>9</strong></p>
+    </td>
+    <td>
+        <p><strong>10</strong></p>
+    </td>
+    <td>
+        <p><strong>11</strong></p>
+    </td>
+</tr>
+<tr>
+    <td>
+        <p><strong>1</strong></p>
+    </td>
+    <td>
+        <p>no change</p>
+    </td>
+    <td>
+        <p>error</p>
+    </td>
+    <td>
+        <p>error</p>
+    </td>
+    <td>
+        <p>error</p>
+    </td>
+    <td>
+        <p>error</p>
+    </td>
+    <td>
+        <p>error</p>
+    </td>
+    <td>
+        <p>error</p>
+    </td>
+    <td>
+        <p>error</p>
+    </td>
+    <td>
+        <p>Error</p>
+    </td>
+    <td>
+        <p>error</p>
+    </td>
+    <td>
+        <p>error</p>
+    </td>
+</tr>
+<tr>
+    <td>
+        <p><strong>2</strong></p>
+    </td>
+    <td bgcolor="#aa0000">
+        <p>Urban growth</p>
+    </td>
+    <td>
+        <p>no change</p>
+    </td>
+    <td>
+        <p>no change</p>
+    </td>
+    <td bgcolor="#55aa7f">
+        <p>Forest expansion</p>
+    </td>
+    <td bgcolor="#cba67f">
+        <p>Abandoned rainfed agriculture</p>
+    </td>
+    <td bgcolor="#cba67f">
+        <p>Abandoned rainfed agriculture</p>
+    </td>
+    <td bgcolor="#cba67f">
+        <p>Abandoned rainfed agriculture</p>
+    </td>
+    <td>
+        <p>no change</p>
+    </td>
+    <td>
+        <p>no change</p>
+    </td>
+    <td bgcolor="#00aaff">
+        <p>Water level rise</p>
+    </td>
+    <td bgcolor="#00aaff">
+        <p>Water level rise</p>
+    </td>
+</tr>
+<tr>
+    <td>
+        <p><strong>3</strong></p>
+    </td>
+    <td bgcolor="#aa0000">
+        <p>Urban growth</p>
+    </td>
+    <td>
+        <p>no change</p>
+    </td>
+    <td>
+        <p>no change</p>
+    </td>
+    <td bgcolor="#55aa7f">
+        <p>Forest expansion</p>
+    </td>
+    <td bgcolor="#e0bebe">
+        <p>Abandoned irrigated agriculture</p>
+    </td>
+    <td bgcolor="#e0bebe">
+        <p>Abandoned irrigated agriculture</p>
+    </td>
+    <td bgcolor="#e0bebe">
+        <p>Abandoned irrigated agriculture</p>
+    </td>
+    <td>
+        <p>no change</p>
+    </td>
+    <td>
+        <p>no change</p>
+    </td>
+    <td bgcolor="#00aaff">
+        <p>Water level rise</p>
+    </td>
+    <td bgcolor="#00aaff">
+        <p>Water level rise</p>
+    </td>
+</tr>
+<tr>
+    <td>
+        <p><strong>4</strong></p>
+    </td>
+    <td bgcolor="#aa0000">
+        <p>Urban growth</p>
+    </td>
+    <td bgcolor="#ffaa7f">
+        <p>Rainfed agriculture expansion</p>
+    </td>
+    <td bgcolor="#ff97be">
+        <p>Irrigated agriculture expansion</p>
+    </td>
+    <td>
+        <p>no change</p>
+    </td>
+    <td bgcolor="#aa5500">
+        <p>Deforestation</p>
+    </td>
+    <td bgcolor="#aa5500">
+        <p>Deforestation</p>
+    </td>
+    <td bgcolor="#aa5500">
+        <p>Deforestation</p>
+    </td>
+    <td bgcolor="#aa5500">
+        <p>Deforestation</p>
+    </td>
+    <td bgcolor="#aa5500">
+        <p>Deforestation</p>
+    </td>
+    <td bgcolor="#00aaff">
+        <p>Water level rise</p>
+    </td>
+    <td bgcolor="#00aaff">
+        <p>Water level rise</p>
+    </td>
+</tr>
+<tr>
+    <td>
+        <p><strong>5</strong></p>
+    </td>
+    <td bgcolor="#aa0000">
+        <p>Urban growth</p>
+    </td>
+    <td bgcolor="#ffaa7f">
+        <p>Rainfed agriculture expansion</p>
+    </td>
+    <td bgcolor="#ff97be">
+        <p>Irrigated agriculture expansion</p>
+    </td>
+    <td>
+        <p>no change</p>
+    </td>
+    <td>
+        <p>no change</p>
+    </td>
+    <td>
+        <p>no change</p>
+    </td>
+    <td bgcolor="#aaaa00">
+        <p>Natural vegetation decline</p>
+    </td>
+    <td bgcolor="#5d5d5d">
+        <p>burnt</p>
+    </td>
+    <td bgcolor="#aaaa00">
+        <p>Natural vegetation decline</p>
+    </td>
+    <td bgcolor="#00aaff">
+        <p>Water level rise</p>
+    </td>
+    <td bgcolor="#00aaff">
+        <p>Water level rise</p>
+    </td>
+</tr>
+<tr>
+    <td>
+        <p><strong>6</strong></p>
+    </td>
+    <td bgcolor="#aa0000">
+        <p>Urban growth</p>
+    </td>
+    <td bgcolor="#ffaa7f">
+        <p>Rainfed agriculture expansion</p>
+    </td>
+    <td bgcolor="#ff97be">
+        <p>Irrigated agriculture expansion</p>
+    </td>
+    <td bgcolor="#55aa7f">
+        <p>Forest expansion</p>
+    </td>
+    <td>
+        <p>no change</p>
+    </td>
+    <td>
+        <p>no change</p>
+    </td>
+    <td bgcolor="#aaaa00">
+        <p>Natural vegetation decline</p>
+    </td>
+    <td bgcolor="#5d5d5d">
+        <p>burnt</p>
+    </td>
+    <td bgcolor="#aaaa00">
+        <p>Natural vegetation decline</p>
+    </td>
+    <td bgcolor="#00aaff">
+        <p>Water level rise</p>
+    </td>
+    <td bgcolor="#00aaff">
+        <p>Water level rise</p>
+    </td>
+</tr>
+<tr>
+    <td>
+        <p><strong>7</strong></p>
+    </td>
+    <td bgcolor="#aa0000">
+        <p>Urban growth</p>
+    </td>
+    <td bgcolor="#ffaa7f">
+        <p>Rainfed agriculture expansion</p>
+    </td>
+    <td bgcolor="#ff97be">
+        <p>Irrigated agriculture expansion</p>
+    </td>
+    <td bgcolor="#55aa7f">
+        <p>Forest expansion</p>
+    </td>
+    <td bgcolor="#aaff7f">
+        <p>Natural vegetation growth</p>
+    </td>
+    <td bgcolor="#aaff7f">
+        <p>Natural vegetation growth</p>
+    </td>
+    <td>
+        <p>no change</p>
+    </td>
+    <td bgcolor="#5d5d5d">
+        <p>burnt</p>
+    </td>
+    <td bgcolor="#aaaa00">
+        <p>Natural vegetation decline</p>
+    </td>
+    <td bgcolor="#00aaff">
+        <p>Water level rise</p>
+    </td>
+    <td bgcolor="#00aaff">
+        <p>Water level rise</p>
+    </td>
+</tr>
+<tr>
+    <td>
+        <p><strong>8</strong></p>
+    </td>
+    <td bgcolor="#aa0000">
+        <p>Urban growth</p>
+    </td>
+    <td bgcolor="#ffaa7f">
+        <p>Rainfed agriculture expansion</p>
+    </td>
+    <td bgcolor="#ff97be">
+        <p>Irrigated agriculture expansion</p>
+    </td>
+    <td bgcolor="#55aa7f">
+        <p>Forest expansion</p>
+    </td>
+    <td bgcolor="#aaff7f">
+        <p>Natural vegetation growth</p>
+    </td>
+    <td bgcolor="#aaff7f">
+        <p>Natural vegetation growth</p>
+    </td>
+    <td bgcolor="#aaff7f">
+        <p>Natural vegetation growth</p>
+    </td>
+    <td>
+        <p>no change</p>
+    </td>
+    <td>
+        <p>no change</p>
+    </td>
+    <td bgcolor="#00aaff">
+        <p>Water level rise</p>
+    </td>
+    <td bgcolor="#00aaff">
+        <p>Water level rise</p>
+    </td>
+</tr>
+<tr>
+    <td>
+        <p><strong>9</strong></p>
+    </td>
+    <td bgcolor="#aa0000">
+        <p>Urban growth</p>
+    </td>
+    <td bgcolor="#ffaa7f">
+        <p>Rainfed agriculture expansion</p>
+    </td>
+    <td bgcolor="#ff97be">
+        <p>Irrigated agriculture expansion</p>
+    </td>
+    <td bgcolor="#55aa7f">
+        <p>Forest expansion</p>
+    </td>
+    <td bgcolor="#aaff7f">
+        <p>Natural vegetation growth</p>
+    </td>
+    <td bgcolor="#aaff7f">
+        <p>Natural vegetation growth</p>
+    </td>
+    <td bgcolor="#aaff7f">
+        <p>Natural vegetation growth</p>
+    </td>
+    <td>
+        <p>no change</p>
+    </td>
+    <td>
+        <p>no change</p>
+    </td>
+    <td bgcolor="#00aaff">
+        <p>Water level rise</p>
+    </td>
+    <td bgcolor="#00aaff">
+        <p>Water level rise</p>
+    </td>
+</tr>
+<tr>
+    <td>
+        <p><strong>10</strong></p>
+    </td>
+    <td bgcolor="#aa0000">
+        <p>Urban growth</p>
+    </td>
+    <td bgcolor="#ffaa7f">
+        <p>Rainfed agriculture expansion</p>
+    </td>
+    <td bgcolor="#ff97be">
+        <p>Irrigated agriculture expansion</p>
+    </td>
+    <td bgcolor="#55aa7f">
+        <p>Forest expansion</p>
+    </td>
+    <td bgcolor="#aaaaff">
+        <p>Water level drop</p>
+    </td>
+    <td bgcolor="#aaaaff">
+        <p>Water level drop</p>
+    </td>
+    <td bgcolor="#aaaaff">
+        <p>Water level drop</p>
+    </td>
+    <td>
+        <p>error</p>
+    </td>
+    <td bgcolor="#aaaaff">
+        <p>Water level drop</p>
+    </td>
+    <td>
+        <p>no change</p>
+    </td>
+    <td>
+        <p>no change</p>
+    </td>
+</tr>
+<tr>
+    <td>
+        <p><strong>11</strong></p>
+    </td>
+    <td bgcolor="#aa0000">
+        <p>Urban growth</p>
+    </td>
+    <td bgcolor="#ffaa7f">
+        <p>Rainfed agriculture expansion</p>
+    </td>
+    <td bgcolor="#ff97be">
+        <p>Irrigated agriculture expansion</p>
+    </td>
+    <td bgcolor="#55aa7f">
+        <p>Forest expansion</p>
+    </td>
+    <td bgcolor="#aaaaff">
+        <p>Water level drop</p>
+    </td>
+    <td bgcolor="#aaaaff">
+        <p>Water level drop</p>
+    </td>
+    <td bgcolor="#aaaaff">
+        <p>Water level drop</p>
+    </td>
+    <td>
+        <p>error</p>
+    </td>
+    <td bgcolor="#aaaaff">
+        <p>Water level drop</p>
+    </td>
+    <td>
+        <p>no change</p>
+    </td>
+    <td>
+        <p>no change</p>
+    </td>
+</tr>
+</tbody>
+</table>
+<table class="table table-condensed"
+       style="font-size: 12px; width: 200px;display: block;margin: 10px auto;">
+    <caption>Table X: LUCC Nomenclature</caption>
+    <tbody>
+        <tr>
+            <td bgcolor="#E0BEBE" align="center"></td>
+            <td align="left">Abandoned irrigated agriculture</td>
+        </tr>
+        <tr>
+            <td bgcolor="#CBA67F" align="center"></td>
+            <td align="left">Abandoned rainfed agriculture</td>
+        </tr>
+        <tr>
+            <td bgcolor="#ff97be" align="center"></td>
+            <td align="left">Irrigated agriculture expansion</td>
+        </tr>
+        <tr>
+            <td bgcolor="#ffaa7f" align="center"></td>
+            <td align="left">Rainfed agriculture expansion</td>
+        </tr>
+        <tr>
+            <td bgcolor="#5d5d5d" align="center"></td>
+            <td align="left">Burnt</td>
+        </tr>
+        <tr>
+            <td bgcolor="#aa5500" align="center"></td>
+            <td align="left">Deforestation</td>
+        </tr>
+        <tr>
+            <td bgcolor="#55aa7f" align="center"></td>
+            <td align="left">Forest expansion</td>
+        </tr>
+        <tr>
+            <td bgcolor="#aaaa00" align="center"></td>
+            <td align="left">Natural vegetation decline</td>
+        </tr>
+        <tr>
+            <td bgcolor="#aaff7f" align="center"></td>
+            <td align="left">Natural vegetation growth</td>
+        </tr>
+        <tr>
+            <td bgcolor="#aa0000" align="center"></td>
+            <td align="left">Urban growth</td>
+        </tr>
+        <tr>
+            <td bgcolor="#aaaaff" align="center"></td>
+            <td align="left">Water level drop</td>
+        </tr>
+        <tr>
+            <td bgcolor="#00aaff" align="center"></td>
+            <td align="left">Water level rise</td>
+        </tr>
+    </tbody>
+</table>
+
+<p align="justify"><u>Post-processing</u> – At this stage, the map resulting from the analysis process will be
+    subjected to “cleaning” and generalization procedures. A minimum mapping unit (MMU) may be defined and
+    implemented at this stage, following the concretization of user-requirements</p>
+
+<p align="justify">The indicator “Trends in land cover structure” could be attained using as metrics/proxy the
+    “vegetative land cover structure”. Intended as the distribution of land cover types of greatest concern for
+    land degradation (excluding artificial surfaces) by characterizing the spatial structure of vegetative land
+    cover; it should include and specify natural habitat classes Error! Reference source not found.. This
+    indicator can be sourced from the products generated from this service. </p>
+<br>
+
+<h1>{{ 'dialog.help.toolTitle' | translate }}</h1>
+<br>
+<img src="../../images/help/tools-lulc-subservice.png"
+     style="height:400px;display: block;margin: 10px auto;">
+
+<p align="justify"><u>Tiles</u>: You can either input the Landsat tiles identifiers (Path/Row - PR), or
+    you can
+    drag and select on the map. Separate the tiles with commas.</p>
+
+<p align="justify"><u>Years</u>: Set the reference year(s) for the products you want to generate. If you
+    set
+    only one reference year the LULC changes product will not be generated. Separate the reference years
+    with commas.</p>
+
+<p align="justify"><u>Minimum Mapping Unit (MMU)</u>: Set a Minimum Mapping Unit in hectares for the
+    generalization procedures. The MMU is applied both to LULC and LULC change products. Set to zero, if
+    no generalization is required.</p>
+
+<p align="justify"><u>User Trainning data</u>: Insert a link to a zip file with your training data.
+    Leave it
+    blank if you want products to be generated with default training data.</p>

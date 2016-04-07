@@ -1,0 +1,15 @@
+<div class="menu-dialog-tile-selection">
+    <i class="fa fa-globe"></i>
+    <label class="margin-left-5" autofocus="autofocus">{{ 'dialog.tileSelection.message' | translate }}</label>
+
+    <div id="menu" class="menu">
+        <button id="proceed-button" type="button" class="btn btn-default menu-button"
+                ng-click="openProcessInvokeDialog(ngDialogData.processIdentifier,ngDialogData.processTitle, selectedTiles())">
+            {{
+            'dialog.tileSelection.proceed' | translate }}
+        </button>
+        <button type="button" class="btn btn-default menu-button" ng-click="closeThisDialog('Some value')">{{
+            'dialog.tileSelection.cancel' | translate }}
+        </button>
+    </div>
+</div>

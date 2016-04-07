@@ -1,0 +1,17 @@
+<div class="general-confimation-dialog">
+    <div>
+        <i class="fa fa-trash"></i>
+        <label class="margin-left-5" autofocus="autofocus">{{ 'dialog.confirmation.deleteMessage' | translate }}</label>
+        <label class="margin-left-5" autofocus="autofocus">'{{ ngDialogData.itemName }}'?</label>
+    </div>
+    <div style="float: right">
+        <button class="btn btn-default confirmation-dialog-ok-btn" ng-click="confirm(1)">{{
+            'dialog.confirmation.delete' |
+            translate }}
+        </button>
+        <button class="btn btn-default confirmation-dialog-ok-btn" ng-click="closeThisDialog(0)">{{
+            'dialog.confirmation.cancel' |
+            translate }}
+        </button>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+<h1>{{ 'dialog.help.theDesertificationTitle' | translate }}</h1>
+<br>
+
+<p align="justify">The purpose of the MELODIES’ desertification service is to create services and tools
+    which facilitate the production and sharing of the UNCCD environmental indicators from open data. The
+    service will support affected countries in their reporting obligations. To best-fit the structure of the
+    required reporting we are developing three self-contained service chains:</p>
+<img src="../../images/help/service-chain.png" style="height:200px;display: block;margin: 10px auto;">
+
+<p align="justify">These sub-services will produce Technical Auxiliary Indicators which relate to some of
+    the requirements of the UNCCD - specified in the latest <a
+            href='http://www.unccd.int/en/programmes/Science/Monitoring-Assessment/Pages/Impact-Refinement.aspx'>Advisory
+        Group of Technical Experts for Impact Indicator Refinement (AGTE) recommendations</a>: the Aridity
+    index, Trends in land productivity or function, and Trends in land cover structure.</p>

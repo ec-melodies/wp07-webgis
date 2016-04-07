@@ -1,0 +1,57 @@
+<div class="menu-dialog-title">{{ 'dialog.help.title' | translate }}</div>
+<div class="menu-dialog-body">
+    <ul id="tabs" class="nav nav-tabs help-tabs">
+
+        <!-- The data-tab attribute specifies the ID of the tab to open when clicked. -->
+        <li><a data-tab="#desertification" href="#">{{ 'dialog.help.desertificationTitle' | translate }}</a></li>
+        <li><a data-tab="#lulcSubService" href="#">{{ 'dialog.help.lulcSubServiceTitle' | translate }}</a></li>
+        <li><a data-tab="#landConditionSubService" href="#">{{ 'dialog.help.landConditionSubServiceTitle' | translate
+            }}</a></li>
+        <li><a data-tab="#susceptibilitySubService" href="#">{{ 'dialog.help.susceptibilitySubServiceTitle' | translate
+            }}</a></li>
+
+    </ul>
+
+    <!-- data-tabs-default is provided to make sure that tab1 is loaded on start. -->
+    <div id="desertification" data-tabs-default data-tab-content>
+        <div class="help-section">
+            <div ng-include="'modules/help/DesertificationIndicatorsHelpContent.html'"></div>
+        </div>
+    </div>
+    <div id="lulcSubService" data-tab-content>
+        <div class="help-section">
+            <div ng-include="'modules/help/LULCHelpContent.html'"></div>
+        </div>
+    </div>
+    <div id="landConditionSubService" data-tab-content>
+        <div class="help-section">
+            <div ng-include="'modules/help/LandConditionHelpContent.html'"></div>
+
+        </div>
+    </div>
+    <div id="susceptibilitySubService" data-tab-content>
+        <div class="help-section">
+            <div ng-include="'modules/help/SusceptibilityToHelpContent.html'"></div>
+
+        </div>
+    </div>
+
+    <script>
+        $(function () {
+            $('#tabs a').tabs({
+                inAnimation: 'fadeIn',
+                outAnimation: 'fadeOut',
+                speed: 200,
+                activeClass: 'tab-active',
+                complete: function (element, tab) {
+                    // code to run on tab click complete
+                },
+                animationComplete: function (tab) {
+                    // code to run on show animation completion
+                },
+                watchHash: true,
+                defaultFromHash: true
+            });
+        });
+    </script>
+</div>

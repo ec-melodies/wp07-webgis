@@ -1,0 +1,68 @@
+<h1>{{ 'dialog.help.theSusceptibilitySubServiceTitle' | translate }}</h1>
+<br>
+
+<p align="justify">The Desertification Susceptibility indicator is produced by intersecting the LULC
+    previously
+    described with space/time’ climatic and biophysical (which are mainly related to vegetation and soil
+    components) intermediate indicators:</p>
+
+<p align="justify">For producing the above indicator, in a first step, it is necessary to compute the
+    following
+    variables with the data provided by the users:</p>
+
+<ul>
+    <li>RL1 - number of days per year with precipitation below 1 mm;</li>
+    <li>Soil Brightness – the relation between NIR band and the RED band;</li>
+    <li>Normalized Difference Vegetation Index (NDVI).</li>
+</ul>
+
+<p align="justify">With the previous variables, a set of intermediate indicators are produced:</p>
+
+<ul>
+    <li align="justify">Local drought degradation [C(x)] - trend of precipitation extremes (RL1), normalized
+        to
+        a range of [0-1]
+        – values closer to 1 are more prone to become desertified;
+    </li>
+    <li align="justify">Local vegetation status [V(x)] – provides a reclassification of the vegetation
+        status
+        for each LULC
+        pixel, within a range of [0-1] – vegetation with values closer to 1 are more similar to the
+        vegetation
+        identified areas where processes of desertification are more intensive;
+    </li>
+    <li align="justify">Local soil status [S(x)] - provides a reclassification of the soil status for each
+        LULC
+        pixel, within a
+        range of [0-1] – soils with values closer to 1 are more similar to the soils identified in areas
+        where
+        processes of desertification are more intensive;
+    </li>
+    <li align="justify">Vegetation and Soil status [B(x)] – integration of the V(x) and S(x) in one unique
+        intermediate
+        indicator so as to emphasize, for each land cover region, the most relevant information from the
+        intermediate V(x) and S(x) – land cover regions with values closer to 1 are more similar to regions
+        identified in areas where processes of desertification are more intensive.
+    </li>
+</ul>
+
+<p align="justify">The preliminary indicators C(x) and B(x) are then integrated so as to produce the final
+    indicator of Susceptibility to Desertification I(x).</p>
+
+<img src="../../images/help/susceptibility-desertification.jpg"
+     style="height:600px;display: block;margin: 10px auto;">
+
+<p align="justify">This final indicator provides, for each land cover patch, the susceptibility to
+    desertification in terms of vegetation, soil and climate. I.e., a region with sparse vegetation with low
+    vivacity, or a region with soil more exposed and low values of moisture, organic matter, etc.., may not
+    be
+    prone to desertification; however, if a land cover region has those characteristics and a climate prone
+    to
+    drought, it has a great tendency towards desertification.</p>
+<br>
+
+<h1>{{ 'dialog.help.toolTitle' | translate }}</h1>
+<br>
+Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.

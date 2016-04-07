@@ -1,7 +1,0 @@
-{
-  "id": "493377f2-a4d0-4cad-affa-ed5a524a2130",
-  "creationTime": "2016-04-01T17:04:07.384+02:00",
-  "statusLocation": "/melodies-wps/wps/RetrieveResultServlet?id=0fe8c814-37e6-4e26-9106-e0e73716e009",
-  "inputs": "&dataInputs=tiles=201035;years=2000,2015;MMU=10;User_training_data=http://ligabernardino.com/csw/sites/default/files/ss_magreb.zip;",
-  "jobId": 5
-}

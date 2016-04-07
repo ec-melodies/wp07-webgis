@@ -1,0 +1,80 @@
+<div id="map" class="map" tabindex="1">
+</div>
+<div class="logo">
+    <img src="../../images/logos/melodies-white.png" style="padding-left:10px;height:40px;">
+    <img src="../../images/logos/desertification.png" style="height:40px;">
+</div>
+<div id="menu" class="menu">
+    <button type="button" class="btn btn-default menu-button"
+            ng-click="openTileSelectionDialog('lulc-service', 'dialog.process.lulc')"
+            ng-disabled="tileSelectionDialogId !== undefined">{{ 'menu.buttons.lulc' | translate }}
+    </button>
+    <button type="button" class="btn btn-default menu-button" ng-click="openProcessInvokeDialog('lc-service', 'dialog.process.landCondition')"
+            ng-disabled="tileSelectionDialogId !== undefined">{{ 'menu.buttons.landCondition' | translate }}
+    </button>
+    <button type="button" class="btn btn-default menu-button" ng-click="openProcessInvokeDialog('susceptibility-service', 'dialog.process.susceptibilityTo')"
+            ng-disabled="tileSelectionDialogId !== undefined">{{ 'menu.buttons.susceptibilityTo' | translate }}
+    </button>
+    <button type="button" class="btn btn-default menu-button-help" ng-click="openHelpDialog()">{{ 'menu.buttons.help' |
+        translate }}
+    </button>
+</div>
+<div id="layers" class="layers">
+    <button type="button" class="layer-button layer-collapse-button" data-toggle="collapse"
+            data-target="#body"></button>
+    <label class="layers-title">{{ 'layers.title' | translate }}</label>
+
+    <div id="body" class="layers-body collapse">
+        <label ng-repeat="layer in layers" class="layer-item">
+            <div>
+                <div class="layer-item-label" title="{{layer.layerJobId}}">
+                    <input type="checkbox" ng-checked="isLayerVisible(layer)" ng-click="setLayerVisible($event, layer)">
+                    {{layer.Title}}
+                </div>
+                <div class="layer-item-menu">
+                    <button type="button" class="layer-button fa fa-arrow-down"
+                            ng-click="moveLayerDown($index)"></button>
+                    <button type="button" class="layer-button fa fa-arrow-up" ng-click="moveLayerUp($index)"></button>
+                    <button type="button" class="layer-button fa-search" ng-click="zoomToLayer(layer)"></button>
+                    <button type="button" class="layer-button fa-download" ng-click="downloadLayer(layer)"
+                            ng-disabled="!layer.downloadAvailable"></button>
+                    <button type="button" class="layer-button fa-trash" ng-click="deleteLayer(layer)"></button>
+                </div>
+
+            </div>
+            <label class="layers-item-details">{{ 'dialog.process.process' | translate }} {{layer.processId}} [{{layer.layerJobStatus}}]</label>
+        </label>
+        <script>
+            $("#body").collapse({toggle: true});
+        </script>
+    </div>
+
+</div>
+<div id="legend" class="legend">
+    <div>
+        <span class="pull-right">
+             <label class="legend-title">{{ 'legend.title' | translate }}</label>
+    <button type="button" class="layer-button layer-collapse-button" data-toggle="collapse"
+            data-target="#legend-body"></button>
+        </span>
+    </div>
+
+    <div id="legend-body" class="legend-body collapse">
+        <script>
+            $("#legend-body").collapse({toggle: true});
+        </script>
+    </div>
+
+</div>
+
+<div class="branding-images">
+    <img src="../../images/logos/csw-white.png" style="height:40px;">
+    <img src="../../images/logos/csic-white.png" style="padding-left:10px;height:20px;">
+    <img src="../../images/logos/cerena-white.png" style="padding-left:10px;height:30px;">
+</div>
+<!--<div class="branding-images">-->
+<!--<img src="images/csw-white.png" height="40" name="csw" onmouseover="csw.height='80';" onmouseout="csw.height='40';">-->
+<!--<img src="images/csic-white.png" height="40" name="csic" onmouseover="csic.height='80';" onmouseout="csic.height='40';">-->
+<!--<img src="images/cerena-white.png" height="40" name="cerena" onmouseover="cerena.height='80';" onmouseout="cerena.height='40';">-->
+<!--<img src="images/melodies-white.png" height="40" name="melodies" onmouseover="melodies.height='80';" onmouseout="melodies.height='40';">-->
+<!--</div>-->

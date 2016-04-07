@@ -1,7 +1,0 @@
-{
-  "id": "296e8f9c-a7cc-4ab1-b82b-ed1fe3e7a181",
-  "creationTime": "2016-03-29T19:12:17.491+02:00",
-  "statusLocation": "/melodies-wps/wps/RetrieveResultServlet?id=f9d35d11-3f06-46f5-8fef-a1e94139a224",
-  "inputs": "&dataInputs=tiles=200034,199033,201033,202033,200033,199034,202034,201034;years=2000;MMU=10;User_training_data=no;",
-  "jobId": 1
-}

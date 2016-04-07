@@ -1,0 +1,80 @@
+<h1>{{ 'dialog.help.theLandConditionSubServiceTitle' | translate }}</h1>
+<br>
+
+<p align="justify">First, the Area of Interest, time period, and spatial resolution are set according to the
+    reporting needs of the application. Typically, those are, respectively, the whole countries, 10 years, and 1
+    km. This is agreed between the end users demand on the one hand, and the SERVICE_DEVELOPER on the other
+    hand.</p>
+
+<p align="justify">The core computations are then run using the 2dRUE software library, written in the R
+    language. Most of computational processes are transparent to the user, but attention and user input are
+    required at certain identified points. For that reason, it is advisable that this part of the service is run
+    either by the SERVICE_DEVELOPER or by expert technical users who have received appropriate training. Such
+    core computations are illustrated in Figure 2.</p>
+<img src="../../images/help/land-condition-processing-chain.png"
+     style="height:300px;display: block;margin: 10px auto;">
+
+<p align="justify">The delineation of dry lands in the study area is done early in the process because they
+    constitute the UNCCD spatial domain in terms of climatically affected areas. A classification of the
+    FAO-UNEP aridity index is used to detect the target classes of Dry Sub-humid, Semi-arid and Arid zones. The
+    basic fields of the climate archive are mean maximum, mean and mean minimum temperature, and precipitation.
+    These are at a monthly resolution, and are used to compute yearly maps of the FAO-UNEP aridity index
+    throughout the study period. This results in two maps summarizing the study period, one showing the average
+    aridity, and another one showing fluctuations in the dry lands extension associated with inter-annual
+    variations of aridity.</p>
+
+<p align="justify">Then, archived time-series of a remotely-sensed vegetation index (e.g. Normalized Differences
+    Vegetation Index, NDVI), and corresponding climate fields, are used to compute monthly estimates of Rain Use
+    Efficiency (RUE) and yearly estimates of Net Primary Productivity (NPP), which support respectively the
+    assessment and the monitoring components of Land Condition.</p>
+
+<p align="justify">The assessment is based on comparing the vegetation performance of each location (i.e. the
+    RUE of each grid-cell) to all others, synchronically during the study period. Ecological references are
+    automatically generated through statistical methods. The result is a map of land states, the legend of which
+    addresses levels of ecological maturity: </p>
+<ol>
+    <li><i>Underperforming anomaly</i></li>
+    <li><i>Baseline performance</i></li>
+    <li><i>Range performance: very degraded</i></li>
+    <li><i>Range performance: degraded</i></li>
+    <li><i>Range performance: productive</i></li>
+    <li><i>Range performance: mature</i></li>
+    <li><i>Reference performance</i></li>
+    <li><i>Overperforming anomaly</i></li>
+</ol>
+
+<p align="justify">The monitoring is based on comparing the productivity (NPP) of each location to itself,
+    diachronically over the study period. Effects of inter-annual variations of aridity, and of the course of
+    time, are separated using a stepwise regression of NPP as a function of year number and year aridity, with
+    as many points as the years in the time-series. After this, only effects of time are interpreted in terms of
+    land degradation or progression, whilst simple responses to climate drift are considered as fluctuations
+    with no impact in productivity trends. The result is a map of land trends, with a legend addressing
+    especially shifts to degradation or maturity:</p>
+
+<ol>
+    <li><i>degrading</i></li>
+    <li><i>fluctuating</i></li>
+    <li><i>static</i></li>
+    <li><i>improving</i></li>
+</ol>
+<p align="justify">The assessment and monitoring maps are then combined in a final map of Land Condition, where
+    the legend is hierarchical. A first term is made of land states, and a second one is made of land
+    trends.</p>
+
+<p align="justify">All the maps are in raster model and can be exported to any of the formats contained in the
+    current version of the GDAL library. Tables and queries can be generated on demand, and facilities to adapt
+    to the PRAIS format can be devised. Visualization is additionally facilitated by the conversion of the
+    raster maps to KMZ format for their use with Google Earth or ArcGIS Explorer. </p>
+
+<p align="justify">The new UNCCD indicator “Trends in land productivity or functioning of the Land” is
+    explicitly addressed by the monitoring component of the Land Condition service. It makes the additional
+    refinement to separate intrinsic trends of land productivity, which are truly associated with land
+    degradation or land progression under ecological succession, from extrinsic trends related to climate
+    drift.</p>
+<br>
+
+<h1>{{ 'dialog.help.toolTitle' | translate }}</h1>
+<br>
+Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.

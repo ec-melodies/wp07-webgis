@@ -1,0 +1,53 @@
+{
+    "layers": {
+        "title": "Layers"
+    },
+    "legend": {
+        "title": "Legend"
+    },
+    "menu": {
+        "buttons": {
+            "lulc": "LULC Processing",
+            "landCondition": "Land Condition Processing",
+            "susceptibilityTo": "Susceptibility To Desertification Processing",
+            "help": "Help"
+        }
+    },
+    "dialog": {
+        "tileSelection": {
+            "message": "Drag on the map to select tiles",
+            "cancel": "Cancel",
+            "proceed": "Proceed",
+            "numTiles": "Number of tiles selected: ",
+            "tiles": "Tiles: "
+        },
+        "process": {
+            "title": "LULC Processing",
+            "process": "Process",
+            "started": "started",
+            "runProcess": "Run Process",
+            "resultsMessage": "The output results will appear automatically on the layers tree when the process is finished",
+            "lulc": "LULC Processing",
+            "landCondition": "Land Condition Processing",
+            "susceptibilityTo": "Susceptibility To Desertification Processing"
+        },
+        "help": {
+            "title": "Help",
+            "desertificationTitle": "Desertification Indicators",
+            "theDesertificationTitle": "The Desertification Indicators",
+            "lulcSubServiceTitle": "LULC subservice",
+            "theLulcSubServiceTitle": "The LULC subservice",
+            "landConditionSubServiceTitle": "Land Condition subservice",
+            "theLandConditionSubServiceTitle": "The Land Condition subservice",
+            "susceptibilitySubServiceTitle": "Susceptibility to Desertification subservice",
+            "theSusceptibilitySubServiceTitle": "The Susceptibility to Desertification subservice",
+            "toolTitle": "The Tool"
+        },
+        "confirmation": {
+            "deleteMessage": "Delete ",
+            "ok": "Ok",
+            "delete": "Delete",
+            "cancel": "Cancel"
+        }
+    }
+}

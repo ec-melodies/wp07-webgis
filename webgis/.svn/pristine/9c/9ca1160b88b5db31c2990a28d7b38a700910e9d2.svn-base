@@ -1,0 +1,6 @@
+# Specify the application wps jobs
+# service-id = job-identifier = wps-host
+lulc-service = com.terradue.wps_oozie.process.OozieAbstractAlgorithm = http://sb-10-15-27-21.melodies.terradue.int:8080/wps/WebProcessingService
+#lc-service = com.terradue.wps_oozie.process.OozieAbstractAlgorithm = http://sb-10-15-27-21.melodies.terradue.int:8080/wps/WebProcessingService
+#susceptibility-service = com.terradue.wps_oozie.process.OozieAbstractAlgorithm = http://sb-10-15-27-21.melodies.terradue.int:8080/wps/WebProcessingService
+

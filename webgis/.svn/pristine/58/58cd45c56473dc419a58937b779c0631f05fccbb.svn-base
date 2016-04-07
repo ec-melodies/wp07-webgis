@@ -1,0 +1,35 @@
+<div class="menu-dialog-title">{{ ngDialogData.processTitle | translate }}</div>
+<div class="menu-dialog-body">
+    <div>
+        <div class="menu-dialog-lulc-error-label">{{serviceError}}</div>
+    </div>
+    <div ng-repeat="parameter in parameters track by $index">
+        <div class="margin-bottom-10">{{ parameter.title}}</div>
+        <form role="form" ng-submit="addValue(parameter.identifier, parameterValue)">
+            <p class="input-group width-100">
+                <input type="text" ng-model="addValues[parameter.identifier]" placeholder="{{ parameter.abstract }}"
+                       class="form-control menu-dialog-lulc-input">
+        <span class="input-group-btn" ng-show="parameter.multiple">
+            <button class="menu-dialog-lulc-btn fa fa-plus"></button>
+        </span>
+            </p>
+        </form>
+
+        <p class="input-group width-100" ng-repeat="value in values[parameter.identifier] track by $index">
+            <input type="text" ng-model="values[parameter.identifier][$index]"
+                   class="form-control menu-dialog-lulc-input-list">
+        <span class="input-group-btn">
+            <button class="menu-dialog-lulc-btn fa fa-minus"
+                    ng-click="removeValue(parameter.identifier, $index)"></button>
+        </span>
+        </p>
+    </div>
+    <div>
+        <button class="btn btn-default menu-dialog-lulc-btn-run" ng-click="runProcess()" ng-show="!serviceError">{{ 'dialog.process.runProcess' |
+            translate }}
+        </button>
+    </div>
+    <div>
+        <div class="menu-dialog-lulc-error-label">{{errorMessage}}</div>
+    </div>
+</div>
