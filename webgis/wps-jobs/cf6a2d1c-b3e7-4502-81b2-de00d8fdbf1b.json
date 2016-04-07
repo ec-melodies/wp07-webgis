@@ -1,0 +1,7 @@
+{
+  "id": "cf6a2d1c-b3e7-4502-81b2-de00d8fdbf1b",
+  "creationTime": "2016-04-01T11:41:54.797+02:00",
+  "statusLocation": "/melodies-wps/wps/RetrieveResultServlet?id=23d51eb8-c2d1-4ef6-88e4-21b26c01e446",
+  "inputs": "&dataInputs=tiles=204033;years=2000;MMU=10;User_training_data=http://ligabernardino.com/csw/sites/default/files/ss_pt.zip;",
+  "jobId": 2
+}
